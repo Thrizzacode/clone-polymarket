@@ -7,4 +7,14 @@ export default defineConfig({
     center: "flex items-center justify-center",
     btnFn: "bg-#22c55e hover:bg-#1f9d4d cursor-pointer",
   },
+  theme: {
+    colors: {
+      primary: "#00AEFF",
+      gray: "#7886A0",
+      btn_gray: "#EEF2FA",
+      content: "#444851",
+      footer_title: "#92aaf4",
+      footer_content: "#506AA1",
+    },
+  },
 });
