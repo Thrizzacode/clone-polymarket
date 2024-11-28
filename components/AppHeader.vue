@@ -167,7 +167,7 @@
               class="flex justify-end items-center w-169px bg-btn_gray text-gray"
             >
               0.0000000
-              <img class="mx-8px" src="@/assets/images/usdc.png" alt="usdc" />
+              <img class="mx-8px" src="@/assets/images/USDC.png" alt="usdc" />
               <img
                 class="mr-16px"
                 src="@/assets/icons/arrow-down.svg"
