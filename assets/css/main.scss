@@ -1,6 +1,6 @@
 * {
   // font-family: "Fira Code", monospace;
-  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
   /* 適用於 Webkit 瀏覽器 (Chrome, Edge, Safari) */
   ::-webkit-scrollbar {
     display: none;
@@ -9,4 +9,12 @@
   /* 適用於 Firefox */
   scrollbar-width: none; /* 隱藏滾動條 */
   scrollbar-color: transparent transparent; /* 避免殘留背景色 */
+
+  input {
+    outline: none;
+  }
+}
+
+:root {
+  font-size: 14px;
 }

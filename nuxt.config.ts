@@ -19,7 +19,14 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: ["@pinia/nuxt", "@unocss/nuxt", "@nuxt/icon"],
+  modules: [
+    "@pinia/nuxt",
+    "@unocss/nuxt",
+    "@nuxt/icon",
+    "@vueuse/nuxt",
+    "@nuxt/eslint",
+    "@vee-validate/nuxt",
+  ],
   css: ["~/assets/css/main.scss"],
   unocss: {
     preflight: true,

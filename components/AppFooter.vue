@@ -1,7 +1,7 @@
 <template>
   <!-- coin -->
-  <div class="center h-110px w-full bg-btn_gray text-gray">
-    <div class="h-30px flex text-14px">
+  <div class="center h-110px bg-btn_gray text-gray w-full">
+    <div class="h-30px flex">
       <div class="center w-140px gap-10px">
         <img src="@/assets/icons/coin/btc.svg" alt="" />
         <p>BITCOIN</p>
@@ -46,17 +46,15 @@
   </div>
 
   <!-- list -->
-  <div class="flex flex-col relative h-240px bg-#212A48">
+  <div class="h-240px bg-#212A48 relative flex flex-col">
     <div
-      class="absolute top-0 left-0 w-full h-full bg-[url('@/assets/images/footer_watermark.png')] opacity-20"
+      class="absolute left-0 top-0 h-full w-full bg-[url('@/assets/images/footer_watermark.png')] opacity-20"
       alt=""
-    />
-    <div
-      class="flex z-10 w-full h-200px justify-between px-280px py-17px text-14px"
-    >
+    ></div>
+    <div class="h-200px px-280px py-17px z-10 flex w-full justify-between">
       <div>
-        <p class="text-footer_title font-bold mb-10px">娛樂城</p>
-        <ul class="flex flex-col gap-10px text-footer_content">
+        <p class="text-footer_title mb-10px font-bold">娛樂城</p>
+        <ul class="gap-10px text-footer_content flex flex-col">
           <li>
             <NuxtLink to="/">小遊戲</NuxtLink>
           </li>
@@ -66,8 +64,8 @@
         </ul>
       </div>
       <div>
-        <p class="text-footer_title font-bold mb-10px">支持</p>
-        <ul class="flex flex-col gap-10px text-footer_content">
+        <p class="text-footer_title mb-10px font-bold">支持</p>
+        <ul class="gap-10px text-footer_content flex flex-col">
           <li>
             <NuxtLink to="/">幫助中心</NuxtLink>
           </li>
@@ -83,8 +81,8 @@
         </ul>
       </div>
       <div>
-        <p class="text-footer_title font-bold mb-10px">關於我們</p>
-        <ul class="flex flex-col gap-10px text-footer_content">
+        <p class="text-footer_title mb-10px font-bold">關於我們</p>
+        <ul class="gap-10px text-footer_content flex flex-col">
           <li>
             <NuxtLink to="/">聯盟計畫</NuxtLink>
           </li>
@@ -100,8 +98,8 @@
         </ul>
       </div>
       <div>
-        <p class="text-footer_title font-bold mb-10px">付款信息</p>
-        <ul class="flex flex-col gap-10px text-footer_content">
+        <p class="text-footer_title mb-10px font-bold">付款信息</p>
+        <ul class="gap-10px text-footer_content flex flex-col">
           <li>
             <NuxtLink to="/">存款和取款</NuxtLink>
           </li>
@@ -117,8 +115,8 @@
         </ul>
       </div>
       <div>
-        <p class="text-footer_title font-bold mb-10px">操作指南</p>
-        <ul class="flex flex-col gap-10px text-footer_content">
+        <p class="text-footer_title mb-10px font-bold">操作指南</p>
+        <ul class="gap-10px text-footer_content flex flex-col">
           <li>
             <NuxtLink to="/">操作指南</NuxtLink>
           </li>

@@ -1,14 +1,14 @@
 <template>
   <div
-    class="card flex flex-col h-170px border-1px border-#e4e4e455 rounded-lg animation duration-200"
+    class="card h-170px border-1px border-#e4e4e455 animation flex flex-col rounded-lg duration-200"
   >
-    <div class="flex flex-col justify-between h-138px px-12px pt-19px pb-14px">
-      <div class="relative flex items-center h-40px gap-10px">
-        <img class="rounded-md size-40px" src="@/assets/images/bitcoin.webp" />
-        <p class="w-190px text-content text-14px font-600">
+    <div class="h-138px px-12px pt-19px pb-14px flex flex-col justify-between">
+      <div class="h-40px gap-10px relative flex items-center">
+        <img class="size-40px rounded-md" src="@/assets/images/bitcoin.webp" />
+        <p class="w-190px text-content font-600">
           2024 年比特幣會達到 10 萬美元嗎？
         </p>
-        <div class="absolute top-0 right-0">
+        <div class="absolute right-0 top-0">
           <svg
             width="58"
             height="29"
@@ -21,7 +21,7 @@
               stroke="#E0E0E0"
               stroke-width="4"
               stroke-linecap="butt"
-            ></path>
+            />
             <path
               d="M -29.001 3.5514757175273244e-15 A 29 29 0 0 1 -24.593394788536354 -15.367658662762938"
               fill="none"
@@ -29,25 +29,25 @@
               stroke-opacity="0.8425"
               stroke-width="4"
               stroke-linecap="butt"
-            ></path>
+            />
           </svg>
           <div
-            class="absolute top-10px left-1/2 -translate-x-1/2 flex flex-col items-center"
+            class="top-10px absolute left-1/2 flex -translate-x-1/2 flex-col items-center"
           >
             <p>18%</p>
             <p class="text-12px text-#828282">機會</p>
           </div>
         </div>
       </div>
-      <div class="flex gap-10px">
+      <div class="gap-10px flex">
         <button
-          class="center gap-10px h-36px w-full bg-#27AE601A text-#27AE60 hover:bg-#27AE60 hover:text-white font-semibold rounded-md"
+          class="center gap-10px h-36px bg-#27AE601A text-#27AE60 hover:bg-#27AE60 w-full rounded-md font-semibold hover:text-white"
         >
           購買是
           <img src="@/assets/icons/yes.svg" alt="yes" />
         </button>
         <button
-          class="center gap-10px h-36px w-full bg-#EB57571A text-#E64800 hover:bg-#E64800 hover:text-white font-semibold rounded-md"
+          class="center gap-10px h-36px bg-#EB57571A text-#E64800 hover:bg-#E64800 w-full rounded-md font-semibold hover:text-white"
         >
           購買否
           <img src="@/assets/icons/no.svg" alt="no" />
@@ -56,10 +56,10 @@
     </div>
 
     <div
-      class="flex justify-between items-center h-32px px-12px text-#828282 text-14px"
+      class="h-32px px-12px text-#828282 flex items-center justify-between"
       style="box-shadow: 0px -2px 4px 0px #0000000d"
     >
-      <div class="flex gap-5px h-24px">
+      <div class="gap-5px h-24px flex">
         <div class="center size-24px bg-#ECF2FD rounded-4px">
           <img src="@/assets/icons/pin.svg" alt="pin" />
         </div>

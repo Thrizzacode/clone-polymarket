@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            background-color: #F2F5FB;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 360px;
+            height: 330px;
+            border: 1px solid #E1E1E1;
+            border-radius: 20px;
+            background-color: white;
+            margin-top: 210px;
+        }
+
+        .container p {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .codeArea {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        input {
+            width: 60px;
+            height: 68px;
+            border: 0;
+            border-radius: 10px;
+            background-color: #F2F5FB;
+            outline-color: #00AEFF;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .logo {
+            position: relative;
+        }
+
+        .send {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/blue_circle.png" alt="">
+            <img class="send" src="/send.svg" alt="">
+        </div>
+        <p>輸入88Market顯示的安全碼</p>
+        <div class="codeArea">
+            <input class="oneTimeCode1" type="text">
+            <input class="oneTimeCode2" type="text">
+            <input class="oneTimeCode3" type="text">
+        </div>
+    </div>
+</body>
+
+</html>

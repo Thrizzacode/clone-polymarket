@@ -1,3 +1,4 @@
+import presetMini from "@unocss/preset-mini";
 import { defineConfig } from "unocss";
 
 export default defineConfig({
@@ -15,6 +16,12 @@ export default defineConfig({
       content: "#444851",
       footer_title: "#92aaf4",
       footer_content: "#506AA1",
+      dark: {
+        bg: "#1E2845",
+        head_bg: "#1E2845",
+        btn_gray: "#353F5D",
+      },
     },
   },
+  persets: [presetMini()],
 });
