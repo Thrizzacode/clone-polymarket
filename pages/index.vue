@@ -205,7 +205,9 @@
       </div>
 
       <!-- 分類 -->
-      <div class="h-40px gap-16px mt-30px text-content font-600 flex">
+      <div
+        class="h-40px gap-16px mt-30px text-content font-600 flex dark:text-white"
+      >
         <button
           v-for="tag in tagList"
           :key="tag.name"
@@ -215,8 +217,26 @@
         >
           {{ tag.name }}
         </button>
-        <button class="center size-40px bg-btn_gray rounded-full">
-          <img src="@/assets/icons/next.svg" alt="next" />
+        <button
+          class="center size-40px bg-btn_gray dark:bg-dark-btn_gray rounded-full"
+        >
+          <!-- <img src="@/assets/icons/next.svg" alt="next" /> -->
+
+          <svg
+            width="8"
+            height="14"
+            viewBox="0 0 8 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 13L7 7L1 1"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
       </div>
       <div
