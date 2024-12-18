@@ -5,10 +5,9 @@
     @mouseleave="handleCloseLangSelect"
   >
     <button
-      class="dark:bg-dark-btn_gray bg-btn_gray w-68px text-gray rounded-5px h-full dark:text-white"
+      class="dark:bg-dark-btn_gray bg-btn_gray w-68px text-gray rounded-5px px-10px h-full dark:text-white"
     >
-      <div class="flex items-center justify-around">
-        <img width="20" src="@/assets/icons/lang.svg" alt="usdc" />
+      <div class="flex items-center justify-between">
         <div class="font-600">{{ lang }}</div>
         <img :src="showLangSelect ? arrowUp : arrowDown" alt="usdc" />
       </div>

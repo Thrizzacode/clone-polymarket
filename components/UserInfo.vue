@@ -13,7 +13,7 @@
 
     <Transition name="fade">
       <div
-        v-if="showUserInfo"
+        v-show="showUserInfo"
         class="dark:bg-#353F5D dark:border-#525F87 top-45px w-225px h-200px border-1px border-btn_gray rounded-5px text-gray absolute right-0 bg-white dark:text-white"
       >
         <div
@@ -43,7 +43,7 @@
               class="dark:bg-#414C6D w-213px h-60px bg-#f5f5f5 rounded-10px px-15px flex items-center justify-between"
             >
               <p>日夜模式</p>
-              <DarkModeSwitch @click="darkModeHandler" />
+              <DarkModeSwitch @click="toggleDark()" />
             </div>
           </div>
           <button class="center h-40px">登出</button>
@@ -54,7 +54,7 @@
 </template>
 
 <script setup>
-import { useLocalStorage, useClipboard } from '@vueuse/core';
+import { useDark, useToggle, useClipboard } from '@vueuse/core';
 import arrowUp from '@/assets/icons/arrow-up.svg';
 import arrowDown from '@/assets/icons/arrow-down.svg';
 
@@ -68,12 +68,8 @@ watch(copied, (copyVal) => {
 });
 
 // 暗黑模式
-const isDarkMode = useLocalStorage('dark', false);
-const darkModeHandler = () => {
-  console.log(isDarkMode.value, !isDarkMode.value);
-  isDarkMode.value = !isDarkMode.value;
-};
-
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 // 顯示/關閉用户信息
 const showUserInfo = ref(false);
 let closeTimeout = null;

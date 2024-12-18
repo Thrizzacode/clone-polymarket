@@ -14,7 +14,6 @@
             <ErrorMessage class="text-red" name="電子郵件" />
           </div>
           <Field
-            v-model="emailValue"
             type="email"
             name="電子郵件"
             rules="required|email"

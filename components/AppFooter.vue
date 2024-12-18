@@ -1,6 +1,8 @@
 <template>
   <!-- coin -->
-  <div class="center h-110px bg-btn_gray text-gray w-full">
+  <div
+    class="center h-110px bg-btn_gray text-gray dark:bg-dark-btn_gray w-full"
+  >
     <div class="h-30px flex">
       <div class="center w-140px gap-10px">
         <img src="@/assets/icons/coin/btc.svg" alt="" />
@@ -129,7 +131,7 @@
         </ul>
       </div>
     </div>
-    <div class="center text-footer_content text-12px">
+    <div class="center text-footer_content text-12px text-primary">
       © 2024 88Market.com | 版权所有
     </div>
   </div>
