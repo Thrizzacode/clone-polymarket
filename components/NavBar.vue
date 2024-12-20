@@ -3,42 +3,42 @@
     <NuxtLink
       to="/markets/all"
       class="dark:hover:bg-dark-btn_gray center w-70px hover:bg-btn_gray h-full"
-      >全部</NuxtLink
+      >{{ $t('all') }}</NuxtLink
     >
     <NuxtLink
       to="/markets/new"
       class="dark:hover:bg-dark-btn_gray center w-70px hover:bg-btn_gray h-full"
-      >最新</NuxtLink
+      >{{ $t('new') }}</NuxtLink
     >
     <NuxtLink
       to="/markets/sports"
       class="dark:hover:bg-dark-btn_gray center w-70px hover:bg-btn_gray h-full"
-      >體育</NuxtLink
+      >{{ $t('sport') }}</NuxtLink
     >
     <NuxtLink
       to="/markets/elections"
       class="dark:hover:bg-dark-btn_gray center w-70px hover:bg-btn_gray h-full"
-      >選舉</NuxtLink
+      >{{ $t('election') }}</NuxtLink
     >
     <NuxtLink
       to="/markets/politics"
       class="dark:hover:bg-dark-btn_gray center w-70px hover:bg-btn_gray h-full"
-      >政治</NuxtLink
+      >{{ $t('politic') }}</NuxtLink
     >
     <NuxtLink
       to="/markets/business"
       class="dark:hover:bg-dark-btn_gray center w-70px hover:bg-btn_gray h-full"
-      >商業</NuxtLink
+      >{{ $t('business') }}</NuxtLink
     >
     <NuxtLink
       to="/markets/popculture"
-      class="dark:hover:bg-dark-btn_gray center w-70px hover:bg-btn_gray h-full"
-      >流行文化</NuxtLink
+      class="dark:hover:bg-dark-btn_gray center hover:bg-btn_gray h-full break-normal"
+      >{{ $t('popCulture') }}</NuxtLink
     >
     <NuxtLink
       to="/markets/crypto"
       class="dark:hover:bg-dark-btn_gray center w-70px hover:bg-btn_gray h-full"
-      >加密貨幣</NuxtLink
+      >{{ $t('crypto') }}</NuxtLink
     >
   </div>
 </template>

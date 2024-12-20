@@ -135,14 +135,14 @@
             class="ml-5px w-full bg-transparent outline-none dark:text-white"
             type="text"
             name="search"
-            placeholder="搜索"
+            :placeholder="$t('search')"
           />
         </div>
         <div class="gap-8px flex dark:text-white">
           <button
             class="center gap-12px w-106px border-1px border-#ECECEC rounded-5px dark:bg-dark-btn_gray h-full dark:border-0"
           >
-            排序條件
+            {{ $t('sort') }}
             <img src="@/assets/icons/arrow-down.svg" alt="arrow-down" />
           </button>
           <button
@@ -159,7 +159,7 @@
                 d="M0.75 0.75V2.58333H1.66667L6.3431 9.91667H11.6927L16.3333 2.58333H17.25V0.75H16.3333H1.66667H0.75ZM7.16667 11.75V17.25H10.8333V11.75H7.16667Z"
               />
             </svg>
-            狀態過濾
+            {{ $t('statusFilter') }}
           </button>
           <div
             class="w-100px border-1px border-#ECECEC rounded-5px dark:border-dark-btn_gray flex h-full"
@@ -199,7 +199,7 @@
             class="center gap-12px w-88px bg-#FFE1A3 rounded-5px dark:bg-#503F2A dark:text-#FFAA00 h-full"
           >
             <img src="@/assets/icons/favorite.svg" alt="favorite" />
-            收藏
+            {{ $t('collect') }}
           </button>
         </div>
       </div>
@@ -215,7 +215,7 @@
           :class="{ '!bg-primary': tag.isActive }"
           @click="selectTag(tag)"
         >
-          {{ tag.name }}
+          {{ $t(tag.name) }}
         </button>
         <button
           class="center size-40px bg-btn_gray dark:bg-dark-btn_gray rounded-full"
@@ -247,14 +247,14 @@
       <button
         class="w-100px h-40px rounded-5px bg-primary mt-26px mx-auto text-white"
       >
-        顯示更多
+        {{ $t('showMore') }}
       </button>
 
       <!-- 排行 -->
       <div class="gap-48px my-30px flex">
         <div class="text-content w-1/2 dark:text-white">
           <div class="mb-40px flex justify-between">
-            <p class="text-24px">最近的活動</p>
+            <p class="text-24px">{{ $t('recentAvtivity') }}</p>
             <img
               src="@/assets/icons/gray_arrow_right.svg"
               alt="gray_arrow_right"
@@ -343,7 +343,7 @@
 
         <div class="text-content w-1/2 dark:text-white">
           <div class="mb-40px flex justify-between">
-            <p class="text-24px">本週銷售最高</p>
+            <p class="text-24px">{{ $t('sellHeightest') }}</p>
             <img
               src="@/assets/icons/gray_arrow_right.svg"
               alt="gray_arrow_right"
@@ -379,18 +379,18 @@
 
 <script setup>
 const tagList = ref([
-  { name: '最新', isActive: true },
-  { name: '以太坊', isActive: false },
-  { name: 'Solana', isActive: false },
+  { name: 'new', isActive: true },
+  { name: 'eth', isActive: false },
+  { name: 'solana', isActive: false },
   {
-    name: '穩定幣',
+    name: 'usdc',
     isActive: false,
   },
-  { name: '馬斯克', isActive: false },
-  { name: '名人', isActive: false },
-  { name: '烏克蘭', isActive: false },
-  { name: '俄羅斯', isActive: false },
-  { name: 'Polygon', isActive: false },
+  { name: 'musk', isActive: false },
+  { name: 'famouspeople', isActive: false },
+  { name: 'ukraine', isActive: false },
+  { name: 'russian', isActive: false },
+  { name: 'polygon', isActive: false },
 ]);
 
 const selectTag = (tag) => {

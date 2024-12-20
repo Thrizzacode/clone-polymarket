@@ -21,6 +21,7 @@ export default withNuxt(
         useLobbyStore: 'readonly',
         useTableStore: 'readonly',
         useDrawResultStore: 'readonly',
+        useI18n: 'readonly',
       },
     },
   }

@@ -34,7 +34,7 @@
                     fill="currentColor"
                   />
                 </svg>
-                預測市場</NuxtLink
+                {{ $t('market') }}</NuxtLink
               >
             </li>
             <li>
@@ -54,7 +54,7 @@
                     fill="currentColor"
                   />
                 </svg>
-                休閒遊戲</NuxtLink
+                {{ $t('game') }}</NuxtLink
               >
             </li>
             <li>
@@ -74,7 +74,7 @@
                     fill="currentColor"
                   />
                 </svg>
-                進行中</NuxtLink
+                {{ $t('live') }}</NuxtLink
               >
             </li>
             <li>
@@ -94,7 +94,7 @@
                     fill="currentColor"
                   />
                 </svg>
-                排行榜</NuxtLink
+                {{ $t('rank') }}</NuxtLink
               >
             </li>
             <li>
@@ -114,7 +114,7 @@
                     fill="currentColor"
                   />
                 </svg>
-                賺錢</NuxtLink
+                {{ $t('earn') }}</NuxtLink
               >
             </li>
             <li>
@@ -134,7 +134,7 @@
                     fill="currentColor"
                   />
                 </svg>
-                幫助</NuxtLink
+                {{ $t('help') }}</NuxtLink
               >
             </li>
           </ul>
@@ -153,13 +153,15 @@
                 alt="usdc"
               />
             </div>
-            <div class="center w-50px bg-primary text-white">錢包</div>
+            <div class="center w-50px bg-primary text-white">
+              {{ $t('wallet') }}
+            </div>
           </div>
           <button
             class="dark:bg-dark-bg text-primary border-1px border-primary px-30px rounded-5px h-full bg-white"
             @click="showLoginDialog = true"
           >
-            登錄
+            {{ $t('login') }}
           </button>
           <DialogLogin v-model="showLoginDialog" />
 
@@ -167,7 +169,7 @@
             class="bg-primary px-30px rounded-5px h-full text-white"
             @click="showSignupDialog = true"
           >
-            註冊
+            {{ $t('signup') }}
           </button>
           <DialogSignup v-model="showSignupDialog" />
 

@@ -42,7 +42,7 @@
             <div
               class="dark:bg-#414C6D w-213px h-60px bg-#f5f5f5 rounded-10px px-15px flex items-center justify-between"
             >
-              <p>日夜模式</p>
+              <p>{{ $t('darkMode') }}</p>
               <DarkModeSwitch @click="toggleDark()" />
             </div>
           </div>

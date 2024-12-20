@@ -55,78 +55,74 @@
     ></div>
     <div class="h-200px px-280px py-17px z-10 flex w-full justify-between">
       <div>
-        <p class="text-footer_title mb-10px font-bold">娛樂城</p>
+        <p class="text-footer_title mb-10px font-bold">{{ $t('casino') }}</p>
         <ul class="gap-10px text-footer_content flex flex-col">
           <li>
-            <NuxtLink to="/">小遊戲</NuxtLink>
+            <NuxtLink to="/">{{ $t('miniGame') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">老虎機</NuxtLink>
+            <NuxtLink to="/">{{ $t('slotGame') }}</NuxtLink>
           </li>
         </ul>
       </div>
       <div>
-        <p class="text-footer_title mb-10px font-bold">支持</p>
+        <p class="text-footer_title mb-10px font-bold">{{ $t('support') }}</p>
         <ul class="gap-10px text-footer_content flex flex-col">
           <li>
-            <NuxtLink to="/">幫助中心</NuxtLink>
+            <NuxtLink to="/">{{ $t('helpcenter') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">公平性</NuxtLink>
+            <NuxtLink to="/">{{ $t('fairness') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">在線支持</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/">公平性</NuxtLink>
+            <NuxtLink to="/">{{ $t('onlineSupport') }}</NuxtLink>
           </li>
         </ul>
       </div>
       <div>
-        <p class="text-footer_title mb-10px font-bold">關於我們</p>
+        <p class="text-footer_title mb-10px font-bold">{{ $t('aboutUs') }}</p>
         <ul class="gap-10px text-footer_content flex flex-col">
           <li>
-            <NuxtLink to="/">聯盟計畫</NuxtLink>
+            <NuxtLink to="/">{{ $t('aff') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">隱私政策</NuxtLink>
+            <NuxtLink to="/">{{ $t('privacy') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">反洗錢政策</NuxtLink>
+            <NuxtLink to="/">{{ $t('aml') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">服務條款</NuxtLink>
+            <NuxtLink to="/">{{ $t('service') }}</NuxtLink>
           </li>
         </ul>
       </div>
       <div>
-        <p class="text-footer_title mb-10px font-bold">付款信息</p>
+        <p class="text-footer_title mb-10px font-bold">{{ $t('payment') }}</p>
         <ul class="gap-10px text-footer_content flex flex-col">
           <li>
-            <NuxtLink to="/">存款和取款</NuxtLink>
+            <NuxtLink to="/">{{ $t('depositsAndWithdrawals') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">加密貨幣指南</NuxtLink>
+            <NuxtLink to="/">{{ $t('cryptoGuide') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">支持的加密貨幣</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/">下注多少</NuxtLink>
+            <NuxtLink to="/">{{ $t('supportCrypto') }}</NuxtLink>
           </li>
         </ul>
       </div>
       <div>
-        <p class="text-footer_title mb-10px font-bold">操作指南</p>
+        <p class="text-footer_title mb-10px font-bold">
+          {{ $t('operationGuide') }}
+        </p>
         <ul class="gap-10px text-footer_content flex flex-col">
           <li>
-            <NuxtLink to="/">操作指南</NuxtLink>
+            <NuxtLink to="/">{{ $t('operationGuide') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">88Market VIP 指南</NuxtLink>
+            <NuxtLink to="/">{{ $t('vip') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">莊家優勢指南</NuxtLink>
+            <NuxtLink to="/">{{ $t('bankerGuide') }}</NuxtLink>
           </li>
         </ul>
       </div>

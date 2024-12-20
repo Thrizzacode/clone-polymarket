@@ -25,7 +25,7 @@
             class="p-5px hover:bg-btn_gray w-full"
             @click="handleLangSelect(item)"
           >
-            {{ item }}
+            {{ item.label }}
           </button>
         </div>
       </div>
@@ -37,8 +37,18 @@
 import arrowUp from '@/assets/icons/arrow-up.svg';
 import arrowDown from '@/assets/icons/arrow-down.svg';
 
-const lang = ref('CN');
-const langList = ref(['CN', 'EN']);
+const { setLocale } = useI18n();
+const lang = ref('');
+const langList = ref([
+  {
+    value: 'zh-CN',
+    label: 'CN',
+  },
+  {
+    value: 'en-US',
+    label: 'EN',
+  },
+]);
 
 // 顯示/關閉語系選單
 const showLangSelect = ref();
@@ -57,9 +67,17 @@ const handleCloseLangSelect = () => {
 };
 
 const handleLangSelect = (selectLang) => {
-  lang.value = selectLang;
+  lang.value = selectLang.label;
   showLangSelect.value = false;
+  setLocale(selectLang.value);
 };
+
+const defaultLang = useCookie('locale');
+onMounted(() => {
+  console.log(defaultLang.value);
+  showLangSelect.value = false;
+  lang.value = defaultLang.value === 'zh-CN' ? 'CN' : 'EN';
+});
 </script>
 
 <style scoped>
