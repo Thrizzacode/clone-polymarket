@@ -8,7 +8,7 @@
           <p class="text-24px font-600">羅馬尼亞選舉</p>
         </div>
 
-        <div class="flex justify-between">
+        <div class="mt-30px flex justify-between">
           <div class="gap-30px flex">
             <div class="text-gray gap-10px flex items-center">
               <div class="size-24px rounded-4px bg-btn_gray center">
@@ -31,7 +31,7 @@
           </div>
         </div>
 
-        <div class="gap-20px text-gray flex">
+        <div class="gap-20px text-gray mt-20px flex">
           <div class="gap-10px flex items-center">
             <div class="size-14px bg-#FF4B4B rounded-full"></div>
             <div>卖出 65%</div>
