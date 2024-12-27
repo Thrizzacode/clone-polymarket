@@ -5,9 +5,12 @@
     <div class="h-138px px-12px pt-19px pb-14px flex flex-col justify-between">
       <div class="h-40px gap-10px relative flex items-center">
         <img class="size-40px rounded-md" src="@/assets/images/bitcoin.webp" />
-        <p class="w-190px text-content font-600 dark:text-white">
+        <a
+          href="/event/123"
+          class="w-190px text-content font-600 decoration-2 underline-offset-4 hover:underline dark:text-white"
+        >
           2024 年比特幣會達到 10 萬美元嗎？
-        </p>
+        </a>
         <div class="absolute right-0 top-0">
           <svg
             width="58"

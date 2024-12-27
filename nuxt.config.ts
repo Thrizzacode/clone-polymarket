@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@vee-validate/nuxt',
     '@nuxtjs/i18n',
+    'nuxt-echarts',
   ],
   css: ['~/assets/css/main.scss'],
   unocss: {
@@ -44,5 +45,10 @@ export default defineNuxtConfig({
       redirectOn: 'root',
     },
     strategy: 'no_prefix',
+  },
+  echarts: {
+    renderer: 'canvas',
+    charts: ['LineChart'],
+    components: ['DatasetComponent', 'GridComponent', 'TooltipComponent'],
   },
 });

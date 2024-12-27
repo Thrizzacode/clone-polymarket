@@ -198,25 +198,19 @@ const showLoginDialog = ref(false);
 
 const login = async () => {
   console.log('login');
-  // const privateKey =
-  //   'c49b1995d241b65ed83e18e5d7ac5119ec6055f6918066298eac3a4ad0f8df64';
-  // const privateKey =
-  //   '2f50036013c8d9a301305bbe8263c54870af96066112fd03e7bf33070d7eec94';
 
   // 確保 TronLink 已初始化 tronWeb
   if (typeof window.tronWeb === 'undefined' || !window.tronWeb.ready) {
     console.error('TronLink is not installed or unlocked!');
+    await window.tronLink.request({ method: 'tron_requestAccounts' });
+    return;
   } else {
     console.log('TronLink is ready!');
   }
 
   const tronweb = new TronWeb({
     fullHost: 'https://api.shasta.trongrid.io',
-    // privateKey: privateKey,
   });
-
-  // const generatedAddress = tronweb.address.fromPrivateKey(privateKey);
-  // console.log(generatedAddress); // 應與 'TX48fYG69pGjZcC7W3ADZg6UwkwQooh2xj' 相同
 
   // const fromAddress = window.tronweb.defaultAddress.base58;
   const fromAddress = window.tronLink.tronWeb.defaultAddress.base58;
