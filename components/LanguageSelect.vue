@@ -73,10 +73,10 @@ const handleLangSelect = (selectLang) => {
 };
 
 const defaultLang = useCookie('locale');
+lang.value = defaultLang.value === 'zh-CN' ? 'CN' : 'EN';
 onMounted(() => {
   console.log(defaultLang.value);
   showLangSelect.value = false;
-  lang.value = defaultLang.value === 'zh-CN' ? 'CN' : 'EN';
 });
 </script>
 

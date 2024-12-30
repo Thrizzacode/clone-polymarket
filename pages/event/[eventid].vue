@@ -622,25 +622,50 @@
 </template>
 
 <script setup>
+// const data1 = ref([
+//   { date: '2023-09-01', value: 45 },
+//   { date: '2023-09-02', value: 40 },
+//   { date: '2023-09-03', value: 30 },
+//   { date: '2023-09-04', value: 50 },
+//   { date: '2023-09-05', value: 50 },
+//   { date: '2023-09-06', value: 50 },
+//   { date: '2023-09-07', value: 50 },
+// ]);
+
+// const data2 = ref([
+//   { date: '2023-09-01', value: 55 },
+//   { date: '2023-09-02', value: 60 },
+//   { date: '2023-09-03', value: 70 },
+//   { date: '2023-09-04', value: 50 },
+//   { date: '2023-09-05', value: 50 },
+//   { date: '2023-09-06', value: 50 },
+//   { date: '2023-09-07', value: 50 },
+// ]);
+
 const data1 = ref([
   { date: '2023-09-01', value: 50 },
-  { date: '2023-09-02', value: 45 },
-  { date: '2023-09-03', value: 30 },
-  { date: '2023-09-04', value: 95 },
-  { date: '2023-09-05', value: 60 },
-  { date: '2023-09-06', value: 35 },
-  { date: '2023-09-07', value: 70 },
+  { date: '2023-09-02', value: 80 },
+  { date: '2023-09-03', value: 100 },
+  { date: '2023-09-04', value: 90 },
+  { date: '2023-09-05', value: 70 },
+  { date: '2023-09-06', value: 90 },
+  { date: '2023-09-07', value: 100 },
+  { date: '2023-09-08', value: 85 },
+  { date: '2023-09-09', value: 50 },
 ]);
 
 const data2 = ref([
-  { date: '2023-09-01', value: 30 },
-  { date: '2023-09-02', value: 85 },
+  { date: '2023-09-01', value: 50 },
+  { date: '2023-09-02', value: 30 },
   { date: '2023-09-03', value: 20 },
-  { date: '2023-09-04', value: 55 },
-  { date: '2023-09-05', value: 70 },
-  { date: '2023-09-06', value: 85 },
-  { date: '2023-09-07', value: 40 },
+  { date: '2023-09-04', value: 10 },
+  { date: '2023-09-05', value: 0 },
+  { date: '2023-09-06', value: 10 },
+  { date: '2023-09-07', value: 20 },
+  { date: '2023-09-08', value: 30 },
+  { date: '2023-09-09', value: 50 },
 ]);
+
 const option = ref({
   xAxis: {
     type: 'category',
@@ -661,6 +686,12 @@ const option = ref({
       show: false,
     },
   },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+    },
+  },
   series: [
     {
       data: data1.value.map((item) => item.value),
@@ -671,6 +702,7 @@ const option = ref({
       lineStyle: {
         width: 2, // 線條寬度
       },
+      smooth: true, // 平滑曲線
     },
 
     {
@@ -682,6 +714,7 @@ const option = ref({
       lineStyle: {
         width: 2, // 線條寬度
       },
+      smooth: true, // 平滑曲線
     },
   ],
 });
