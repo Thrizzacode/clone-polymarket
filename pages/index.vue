@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="dark:bg-dark-bg px-280px pt-22px flex flex-col">
+  <div class="flex flex-col items-center">
+    <div class="dark:bg-dark-bg w-1360px pt-22px flex flex-col">
       <div class="gap-25px mb-20px flex text-white">
         <div
           class="h-150px pt-36px pl-20px relative flex w-full justify-between rounded-lg"
@@ -162,9 +162,13 @@
             {{ $t('statusFilter') }}
           </button>
           <div
-            class="w-100px border-1px border-#ECECEC rounded-5px dark:border-dark-btn_gray flex h-full"
+            class="w-100px border-1px border-#ECECEC rounded-5px flex h-full"
           >
-            <button class="center w-1/2">
+            <button
+              class="center w-1/2"
+              :class="{ 'bg-btn_gray dark:border-dark-btn_gray': isBlock }"
+              @click="isBlock = true"
+            >
               <svg
                 width="18"
                 height="18"
@@ -179,7 +183,11 @@
                 />
               </svg>
             </button>
-            <button class="center bg-btn_gray dark:bg-dark-btn_gray w-1/2">
+            <button
+              class="center w-1/2"
+              :class="{ 'bg-btn_gray dark:bg-dark-btn_gray': !isBlock }"
+              @click="isBlock = false"
+            >
               <svg
                 width="18"
                 height="16"
@@ -378,6 +386,7 @@
 </template>
 
 <script setup>
+const isBlock = ref(true);
 const tagList = ref([
   { name: 'new', isActive: true },
   { name: 'eth', isActive: false },

@@ -14,7 +14,7 @@
     <Transition name="fade">
       <div
         v-show="showUserInfo"
-        class="dark:bg-#353F5D dark:border-#525F87 top-45px w-225px h-200px border-1px border-btn_gray rounded-5px text-gray absolute right-0 bg-white dark:text-white"
+        class="dark:bg-#353F5D dark:border-#525F87 top-45px w-225px border-1px border-btn_gray rounded-5px text-gray absolute right-0 bg-white dark:text-white"
       >
         <div
           class="dark:border-#525F87 h-70px border-b-1px border-btn_gray flex items-center justify-start"
@@ -25,7 +25,7 @@
             alt=""
           />
           <div>
-            <p>Paul</p>
+            <p class="text-black">UI Desinger</p>
             <div class="gap-10px flex">
               <p class="dark:text-gray">{{ walletAddress }}</p>
               <img
@@ -37,16 +37,32 @@
             </div>
           </div>
         </div>
-        <div class="h-130px flex flex-col">
-          <div class="center grow-1">
-            <div
-              class="dark:bg-#414C6D w-213px h-60px bg-#f5f5f5 rounded-10px px-15px flex items-center justify-between"
-            >
-              <p>{{ $t('darkMode') }}</p>
-              <DarkModeSwitch @click="toggleDark()" />
-            </div>
+        <div class="flex flex-col">
+          <button class="h-37px px-10px hover:bg-btn_gray text-start">
+            會員資料
+          </button>
+          <button class="h-37px px-10px hover:bg-btn_gray text-start">
+            設置
+          </button>
+          <button class="h-37px px-10px hover:bg-btn_gray text-start">
+            關注列表
+          </button>
+          <button class="h-37px px-10px hover:bg-btn_gray text-start">
+            幫助
+          </button>
+          <button class="h-37px px-10px hover:bg-btn_gray text-start">
+            使用條款
+          </button>
+          <div
+            class="dark:bg-#414C6D w-213px h-40px px-10px flex items-center justify-between"
+          >
+            <p>{{ $t('darkMode') }}</p>
+            <DarkModeSwitch @click="toggleDark()" />
           </div>
-          <button class="center h-40px">登出</button>
+          <button class="center h-37px bg-btn_gray" @click="logout">
+            登出
+            <img class="ml-5px" src="@/assets/icons/logout.svg" alt="" />
+          </button>
         </div>
       </div>
     </Transition>
@@ -84,6 +100,10 @@ const handleCloseUserInfo = () => {
   closeTimeout = setTimeout(() => {
     showUserInfo.value = false;
   }, 300);
+};
+
+const logout = () => {
+  console.log('logout');
 };
 </script>
 

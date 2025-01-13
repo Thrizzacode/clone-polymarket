@@ -48,7 +48,7 @@
   </div>
 
   <!-- list -->
-  <div class="h-240px bg-#212A48 relative flex flex-col">
+  <div class="h-240px bg-#212A48 relative flex w-full flex-col">
     <div
       class="absolute left-0 top-0 h-full w-full bg-[url('@/assets/images/footer_watermark.png')] opacity-20"
       alt=""
@@ -76,6 +76,9 @@
           </li>
           <li>
             <NuxtLink to="/">{{ $t('onlineSupport') }}</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/">自我排除</NuxtLink>
           </li>
         </ul>
       </div>
@@ -107,6 +110,9 @@
           </li>
           <li>
             <NuxtLink to="/">{{ $t('supportCrypto') }}</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/">下注多少</NuxtLink>
           </li>
         </ul>
       </div>

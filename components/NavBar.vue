@@ -32,7 +32,7 @@
     >
     <NuxtLink
       to="/markets/popculture"
-      class="dark:hover:bg-dark-btn_gray center hover:bg-btn_gray h-full break-normal"
+      class="dark:hover:bg-dark-btn_gray w-70px center hover:bg-btn_gray h-full break-normal"
       >{{ $t('popCulture') }}</NuxtLink
     >
     <NuxtLink

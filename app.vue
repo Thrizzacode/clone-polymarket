@@ -9,7 +9,6 @@
 <script setup>
 import { useDark } from '@vueuse/core';
 const isDark = useDark();
-console.log('isDark', isDark.value);
 
 // 使用 computed 來動態生成 htmlAttrs
 const htmlAttributes = computed(() => ({

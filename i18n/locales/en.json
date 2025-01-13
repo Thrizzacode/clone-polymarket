@@ -1,5 +1,6 @@
 {
-  "polygon": "Polygon",
+  "live": "Live",
+  "polygon": "Polygonf",
   "solana": "Solana",
   "cryptoGuide": "Cryptocurrency Guide",
   "bankerGuide": "House Edge Guide",
@@ -48,7 +49,6 @@
   "help": "Help",
   "earn": "Earn",
   "rank": "Rank",
-  "live": "Live",
   "game": "Game",
   "market": "Market"
 }

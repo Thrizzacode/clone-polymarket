@@ -57,4 +57,13 @@ export default defineNuxtConfig({
     charts: ['LineChart'],
     components: ['DatasetComponent', 'GridComponent', 'TooltipComponent'],
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern',
+        },
+      },
+    },
+  },
 });
