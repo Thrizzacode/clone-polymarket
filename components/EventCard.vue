@@ -1,6 +1,6 @@
 <template>
   <div
-    class="card h-170px border-1px border-#e4e4e455 animation dark:bg-dark-btn_gray flex flex-col overflow-hidden rounded-lg duration-200"
+    class="card h-170px border-1px border-#e4e4e455 animation dark:bg-dark-btn_gray relative flex flex-col overflow-hidden rounded-lg duration-200"
   >
     <div class="h-138px px-12px pt-19px pb-14px flex flex-col justify-between">
       <div class="h-40px gap-10px relative flex items-center">
@@ -11,7 +11,9 @@
         >
           2024 年比特幣會達到 10 萬美元嗎？
         </a>
-        <div class="absolute right-0 top-0">
+
+        <!-- 機會 -->
+        <div v-if="!fastBet" class="absolute right-0 top-0">
           <svg
             width="58"
             height="29"
@@ -45,12 +47,14 @@
       <div class="gap-10px flex">
         <button
           class="center gap-10px h-36px bg-#27AE601A text-#27AE60 hover:bg-#27AE60 w-full rounded-md font-semibold hover:text-white"
+          @click="handleBuy('Y')"
         >
           購買是
           <img src="@/assets/icons/yes.svg" alt="yes" />
         </button>
         <button
           class="center gap-10px h-36px bg-#EB57571A text-#E64800 hover:bg-#E64800 w-full rounded-md font-semibold hover:text-white"
+          @click="handleBuy('Y')"
         >
           購買否
           <img src="@/assets/icons/no.svg" alt="no" />
@@ -82,10 +86,68 @@
       </div>
       <img src="@/assets/icons/favorite2.svg" alt="favorite2" />
     </div>
+
+    <img
+      v-if="fastBet"
+      class="right-11px top-11px absolute cursor-pointer"
+      src="@/assets/icons/close.svg"
+      alt=""
+      @click="fastBet = false"
+    />
+    <Transition>
+      <div
+        v-if="fastBet"
+        class="h-110px p-12px absolute bottom-0 w-full bg-white"
+      >
+        <div class="gap-10px flex w-full flex-col">
+          <div class="w-180px relative">
+            <span class="left-10px absolute top-1/2 -translate-y-1/2">$</span>
+            <input
+              v-model="amount"
+              type="number"
+              class="h-40px border-1px border-#E4E4E4 text-14px rounded-5px pl-18px"
+              placeholder="請輸入購買金額"
+            />
+            <div
+              class="gap-5px right-20px absolute top-1/2 flex -translate-y-1/2"
+            >
+              <button
+                class="size-22px bg-#EDEDED rounded-2px text-10px text-#9AA2B2"
+                @click="amount += 1"
+              >
+                +1
+              </button>
+              <button
+                class="size-22px bg-#EDEDED rounded-2px text-10px text-#9AA2B2"
+                @click="amount += 10"
+              >
+                +10
+              </button>
+            </div>
+          </div>
+          <button
+            class="bg-primary h-45px rounded-5px flex w-full flex-col items-center justify-center text-white"
+          >
+            購買 {{ buyType }}<br /><span class="text-#FFFFFFCC"
+              >贏 $200.00</span
+            >
+          </button>
+        </div>
+      </div>
+    </Transition>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script setup>
+const buyType = ref('Y');
+const amount = ref(1);
+const fastBet = ref(false);
+const handleBuy = (type) => {
+  buyType.value = type;
+  console.log(type);
+  fastBet.value = true;
+};
+</script>
 
 <style lang="scss">
 .card {
@@ -93,5 +155,26 @@
   &:hover {
     box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
   }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  transform: translateY(100%);
 }
 </style>

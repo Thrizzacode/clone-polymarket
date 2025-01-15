@@ -264,8 +264,10 @@
           <div class="mb-40px flex justify-between">
             <p class="text-24px">{{ $t('recentAvtivity') }}</p>
             <img
+              class="cursor-pointer"
               src="@/assets/icons/gray_arrow_right.svg"
               alt="gray_arrow_right"
+              @click="navigateTo('/activity')"
             />
           </div>
           <div class="gap-24px flex flex-col">
@@ -353,8 +355,10 @@
           <div class="mb-40px flex justify-between">
             <p class="text-24px">{{ $t('sellHeightest') }}</p>
             <img
+              class="cursor-pointer"
               src="@/assets/icons/gray_arrow_right.svg"
               alt="gray_arrow_right"
+              @click="navigateTo('/ranking')"
             />
           </div>
           <div class="h-290px gap-10px flex flex-col flex-wrap">

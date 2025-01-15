@@ -6,7 +6,10 @@
     :style="{ width: formatSize(width) }"
     @click="handleClickOutSide"
   >
-    <header class="h-74px border-b-1px border-b-btn_gray relative w-full">
+    <header
+      v-if="header"
+      class="h-74px border-b-1px border-b-btn_gray relative w-full"
+    >
       <slot name="header">Header</slot>
       <img
         class="right-20px absolute top-1/2 -translate-y-1/2 cursor-pointer"
@@ -15,7 +18,7 @@
         @click="handleCloseWindow"
       />
     </header>
-    <main class="grow-1 p-12px">
+    <main class="grow-1 p-11px">
       <slot name="main">Main</slot>
     </main>
   </dialog>
@@ -27,9 +30,14 @@ defineProps({
     type: Number,
     default: 430,
   },
+  header: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 const formatSize = (size) => `${size}px`;
+let isClickOutside = false;
 
 const dialog = ref(null);
 const dialogValue = defineModel('showDialog', {
@@ -42,12 +50,55 @@ const handleCloseWindow = () => {
   dialogValue.value = false;
 };
 
-const handleClickOutSide = ({ clientX: x, clientY: y }) => {
-  if (!dialog.value) return;
-
-  const { left, right, top, bottom } = dialog.value.getBoundingClientRect();
-  if (x < left || x > right || y < top || y > bottom) dialogValue.value = false;
+// 鼠标按下时，判断是否点击在 dialog 外部
+const handleMouseDown = (event) => {
+  const rect = dialog.value?.getBoundingClientRect();
+  if (!rect) return;
+  isClickOutside =
+    event.clientX < rect.left ||
+    event.clientX > rect.right ||
+    event.clientY < rect.top ||
+    event.clientY > rect.bottom;
 };
+
+// 鼠标释放时，判断是否依然在 dialog 外部，并关闭对话框
+const handleMouseUp = (event) => {
+  if (!isClickOutside) return;
+
+  const rect = dialog.value?.getBoundingClientRect();
+  if (!rect) return;
+
+  const isReleaseOutside =
+    event.clientX < rect.left ||
+    event.clientX > rect.right ||
+    event.clientY < rect.top ||
+    event.clientY > rect.bottom;
+
+  if (isReleaseOutside) {
+    handleCloseWindow();
+  }
+};
+
+// 监听 mousedown 和 mouseup
+const addEventListeners = () => {
+  dialog.value?.addEventListener('mousedown', handleMouseDown);
+  dialog.value?.addEventListener('mouseup', handleMouseUp);
+};
+
+// 移除事件监听
+const removeEventListeners = () => {
+  dialog.value?.removeEventListener('mousedown', handleMouseDown);
+  dialog.value?.removeEventListener('mouseup', handleMouseUp);
+};
+
+// 生命周期钩子
+onMounted(() => {
+  addEventListeners();
+});
+
+onBeforeUnmount(() => {
+  removeEventListeners();
+});
 
 watch(
   () => dialogValue.value,

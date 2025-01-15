@@ -21,10 +21,20 @@
           />
         </div>
 
-        <button class="w-390px h-47px rounded-4px bg-primary text-white">
-          建立帳戶
+        <div class="field">
+          <div class="gap-10px flex">
+            <p>您的推薦碼</p>
+            <ErrorMessage class="text-red" name="推薦碼" />
+          </div>
+          <Field type="text" name="推薦碼" placeholder="請輸入推薦碼" />
+        </div>
+
+        <button
+          class="w-390px mb-12px h-47px rounded-4px bg-primary text-white"
+        >
+          繼續
         </button>
-        <div class="center text-gray py-20px">請到信箱收取驗證碼</div>
+        <div class="center text-#8080808C text-12px">請到信箱收取驗證碼</div>
       </Form>
 
       <!-- 請求代碼 -->
@@ -34,7 +44,7 @@
       </div>
 
       <!-- 檢查電子郵件 -->
-      <div
+      <!-- <div
         v-if="status === 3"
         class="mb-15px center text-12px gap-5px flex-col"
       >
@@ -54,7 +64,7 @@
             <p class="text-#004DE7">Copy</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- 建立帳戶 -->
       <div v-if="status === 4" class="mb-15px text-12px gap-5px flex flex-col">
@@ -85,8 +95,9 @@
         </div>
       </div>
     </template>
-    <template #footer> </template>
   </UtilDialog>
+
+  <DialogVerify v-model="showVerifyDialog" />
 </template>
 
 <script setup>
@@ -99,6 +110,7 @@ const showSignupDialog = defineModel({
 const title = ref('註冊');
 const status = ref(1);
 const oneTimeCode = '239';
+const showVerifyDialog = ref(false);
 
 // 複製安全碼
 const { text, copy, copied } = useClipboard();
@@ -119,9 +131,8 @@ const onSubmit = (value, { resetForm }) => {
   title.value = '請求代碼';
   status.value = 2;
   setTimeout(() => {
-    status.value = 3;
-    title.value = '檢查您的電子郵件';
-    window.open('verify.html', '_blank');
+    showVerifyDialog.value = true;
+    showSignupDialog.value = false;
   }, 1500);
 };
 
@@ -148,6 +159,6 @@ watch(showSignupDialog, (val) => {
 
 input {
   background: #f7f7fd;
-  color: #9d99ac;
+  color: #000;
 }
 </style>
